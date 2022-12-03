@@ -1,5 +1,3 @@
-
-const { group } = require('console');
 const fs = require('fs');
 const read = fs.readFileSync("input.txt");
 let data = read.toString().split("\r\n")
