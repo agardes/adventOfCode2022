@@ -2,7 +2,7 @@ const fs = require('fs');
 const read = fs.readFileSync("input.txt");
 let data = read.toString().split("\r\n")
 
-let Element = class Element { 
+class Element { 
     constructor(name, parentDir, size=0, depth){
         this.name = name
         this.parentDir = parentDir
@@ -14,10 +14,7 @@ let Element = class Element {
         for(let m=maxDepth; m>=0; m--){
             let k = Object.keys(elements)
             k.forEach(key => {
-                if(elements[key].parentDir == this.name 
-                    && elements[key].depth == m){
-                    this.size += elements[key].size
-                }
+                if(elements[key].parentDir == this.name && elements[key].depth == m) this.size += elements[key].size
             })
         }
            
